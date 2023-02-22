@@ -4,14 +4,14 @@
 #pragma hdrstop
 #include <tchar.h>
 //---------------------------------------------------------------------------
-USEFORM("Unit4.cpp", Form4);
-USEFORM("Unit5.cpp", DataModule5); /* TDataModule: File Type */
-USEFORM("Unit7.cpp", Form7);
-USEFORM("Unit8.cpp", Form8);
-USEFORM("Unit3.cpp", Form3);
-USEFORM("Unit1.cpp", Form1);
-USEFORM("Unit2.cpp", Form2);
-USEFORM("Unit9.cpp", Form9);
+USEFORM("Transfer.cpp", Transfer);
+USEFORM("BD.cpp", DataModule5); /* TDataModule: File Type */
+USEFORM("Modification.cpp", Modification);
+USEFORM("Loading.cpp", Loading);
+USEFORM("Match.cpp", Match);
+USEFORM("MainPlayer.cpp", MainPlayer);
+USEFORM("Plan.cpp", Plan);
+USEFORM("Report.cpp", Report);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {
@@ -19,14 +19,14 @@ int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 	{
 		Application->Initialize();
 		Application->MainFormOnTaskBar = true;
-		Application->CreateForm(__classid(TForm8), &Form8);
-		Application->CreateForm(__classid(TForm1), &Form1);
-		Application->CreateForm(__classid(TForm2), &Form2);
-		Application->CreateForm(__classid(TForm3), &Form3);
-		Application->CreateForm(__classid(TForm4), &Form4);
+		Application->CreateForm(__classid(TLoading), &Loading);
+		Application->CreateForm(__classid(TMainPlayer), &MainPlayer);
+		Application->CreateForm(__classid(TPlan), &Plan);
+		Application->CreateForm(__classid(TMatch), &Match);
+		Application->CreateForm(__classid(TTransfer), &Transfer);
 		Application->CreateForm(__classid(TDataModule5), &DataModule5);
-		Application->CreateForm(__classid(TForm7), &Form7);
-		Application->CreateForm(__classid(TForm9), &Form9);
+		Application->CreateForm(__classid(TModification), &Modification);
+		Application->CreateForm(__classid(TReport), &Report);
 		Application->Run();
 	}
 	catch (Exception &exception)
